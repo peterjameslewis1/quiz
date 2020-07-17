@@ -11,7 +11,7 @@ function start() {
   let difficulty;
   let category;
 
-  start.addEventListener('touchstart', () => {
+  start.addEventListener('click', () => {
     numQuestion = document.getElementById("num-questions").value;
     difficulty = document.getElementById("difficulty").value;
     category = document.getElementById("category").value;
@@ -38,8 +38,6 @@ function start() {
       document.getElementById("start").classList.add("hide");
     }, 2000)
 
-    console.log(numQuestion);
-    console.log(difficulty);
 
     const url = `https://opentdb.com/api.php?amount=${numQuestion}&category=${category}&type=multiple&difficulty=${difficulty}`;
     axios.get(url).then((res) => {
@@ -87,7 +85,9 @@ function start() {
 
       function showQuestion(quiz) {
         // Appending els to the DOM
-        question.innerHTML = quiz[count].question;
+        const decodedQuestion = decodeURI(quiz[count].question)
+        question.innerHTML = decodedQuestion;
+        console.log(quiz[count].question)
       }
 
 
@@ -98,7 +98,7 @@ function start() {
 
         data[count].incorrect_answers.forEach(element => {
           const incorrect = document.createElement("button");
-          incorrect.innerHTML = element;
+          incorrect.innerHTML = decodeURI(element);
           incorrect.classList.add("incorrect");
           incorrect.dataset.incorrect = 'incorrect'
           answerContainer.appendChild(incorrect);
@@ -107,7 +107,7 @@ function start() {
         // Appending correct buttons
         var correct = document.createElement("button")
 
-        correct.innerHTML = data[count].correct_answer;
+        correct.innerHTML = decodeURI(data[count].correct_answer);
         correct.classList.add("correct");
 
         correct.dataset.correct = 'correct';

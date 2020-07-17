@@ -1,4 +1,4 @@
-@primary-color: #007bff;
+@primary-color: #F44336;
 @accent-color: white;
 @font-color: white;
 @font-family: "Josefin Sans";
@@ -24,14 +24,18 @@
         background-color: @primary-color;
         color: @font-family;
         height: 100%;
-        width: 100vw;
+        max-width: 50%;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        /* position: relative; */
         border-radius: 0;
         margin-bottom: 0;
         justify-content: space-between;
         align-items: center;
+
+        @media screen and (max-width: 768px) {
+            max-width: 100%;
+        }
 
         .display-4 {
             color: @font-color;
@@ -107,6 +111,11 @@
                         color: @font-color;
                         font-weight: 100;
                         font-size: 22px;
+
+                        &:hover {
+                            background: white;
+                            color: @primary-color;
+                        }
 
                         @media screen and (max-width: 325px) {
                             padding: 14px 18px;
@@ -190,16 +199,21 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background: #F44336;
         height: 100vh;
         width: 100%;
+        max-width: 60%;
         padding: 0 100px;
+
+        @media screen and (max-width: 1024px) {
+            max-width: 100%;
+            padding: 0 50px;
+        }
 
 
 
         #start-btn {
             font-size: 40px !important;
-            color: @font-color  !important;
+            color: @font-color;
             font-weight: 100;
             background: none;
             border: none;
@@ -210,6 +224,11 @@
 
             &:focus {
                 outline: none;
+            }
+
+            &:hover {
+                background-color: white;
+                color: @primary-color;
             }
         }
 
@@ -231,7 +250,8 @@
             background: white;
             color: #f44236;
             margin-bottom: 40px;
-            padding: 5px;
+            padding: 7px;
+            border-radius: 5px;
         }
 
         .error {
@@ -261,6 +281,7 @@
         overflow: hidden;
 
         .restart {
+            cursor: pointer;
             margin-top: 100px;
             background: #F44336;
             padding: 20px 30px;
@@ -272,6 +293,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            &:hover {
+                background-color: lighten(@primary-color, 5%);
+            }
         }
     }
 
