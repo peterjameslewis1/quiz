@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body">
+    <div class="score-container hide">Score: <span>0</span>
+
+        <div class="restart">Restart</div>
+    </div>
+    <div class="jumbotron hide">
+        <h1 class="display-4">Quiz App</h1>
+        <p id="question">Questions</p>
+
+
+
+        <div class="answer-flip-card">
+            <div class="answer-wrapper">
+                <div class="answer-container">
+                </div>
+                <div class="answer-container-back">
+                    <p class="selected-answer hide"></p>
+                    <p class="correct-answer"></p>
+                </div>
+            </div>
+        </div>
+
+        <a id="next" class="btn btn-primary btn-lg" href="#" role="button">Next</a>
+    </div>
+
+    <div id="start">
+        <button id="start-btn">Start </button>
+        <span class=""></span>
+        <label for="category">Category*</label>
+        <select id="category" class="list">
+            <option value="0">Please Select</option>
+            <option value="9">General Knowledge</option>
+            <option value="21">Sports</option>
+            <option value="12">Music</option>
+            <option value="11">Films</option>
+            <option value="27">Animals</option>
+            <option value="15">Video Games</option>
+            <option value="26">Celebrities</option>
+            <option value="28">Vehicles</option>
+        </select>
+        <label for="num-questions">Number of Questions*</label>
+        <select id="num-questions" class="list">
+            <option value="0">Please Select</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+        </select>
+
+        <label for="difficulty">Difficulty*</label>
+        <select id="difficulty" class="list">
+            <option value="0">Please Select</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <p class="error" id="error"></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
+
+
+
+<!--const url = 'https://opentdb.com/api.php?amount=10&category=27&type=multiple';
+axios.get(url).then((res) => {
+const data = res.data.results;
+console.log(data);
+startGame(data);
+})
+
+function startGame(data) {
+const next = document.getElementById("next");
+const question = document.getElementById("question");
+const answers = document.getElementById("answers");
+
+let count = 0;
+next.addEventListener('click', function() {
+const dataLength = data.length;
+console.log(dataLength);
+
+
+answers.innerText = '';
+const span = document.createElement("span");
+
+
+
+count++;
+console.log(count);
+if (count > dataLength) {
+console.log("Count is > dataLength")
+} else {
+
+for (let i = 0; i < count; i++) { var quiz={ category: `${data[count].category}`, difficulty:
+    `${data[count].difficulty}`, question: `${data[count].question}`, incorrectAnswers:
+    `${data[count].incorrect_answers}`, correctAnswer: `${data[count].correct_answer}` } console.log(quiz)
+    question.innerText=`${quiz.question}`; span.innerText=`${quiz.incorrectAnswers}`; answers.appendChild(span); } } });
+    }-->
