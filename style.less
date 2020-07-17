@@ -39,10 +39,12 @@
 
         .display-4 {
             color: @font-color;
-            font-size: 45px;
+            font-size: 35px;
+            margin: 0 0 30px 0;
 
             @media screen and (max-width: 768px) {
-                font-size: 35px;
+                font-size: 25px;
+                margin: 0 0 30px 0;
             }
         }
 
@@ -58,7 +60,7 @@
             width: 100%;
             height: 50vh;
             perspective: 1000px;
-            margin: 30px 0 50px 0;
+            margin: 30px 0 30px 0;
 
             @media screen and (max-width: 325px) {
                 height: 250px !important;
@@ -107,10 +109,11 @@
                         background: @primary-color;
                         border-radius: 5px;
                         border: 2px solid @accent-color;
-                        margin: 10px;
+                        margin-bottom: 10px;
                         color: @font-color;
                         font-weight: 100;
                         font-size: 22px;
+                        font-weight: 400;
 
                         &:hover {
                             background: white;
@@ -186,7 +189,14 @@
         #next {
             background: @accent-color;
             color: @primary-color;
-            width: 50%;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            border-radius: 0;
+            padding: 15px 0;
+            font-weight: 400;
+            font-size: 22px;
+            border: none;
 
             &:focus {
                 outline: none;
@@ -217,7 +227,6 @@
             font-weight: 100;
             background: none;
             border: none;
-            line-height: 80px;
             border-radius: 5px;
             border: 1px solid white;
             margin-bottom: 30px;
@@ -244,6 +253,7 @@
         label {
             color: @font-color;
             font-size: 22px;
+            font-weight: 200;
         }
 
         .list {
@@ -252,6 +262,12 @@
             margin-bottom: 40px;
             padding: 7px;
             border-radius: 5px;
+            font-weight: 300;
+            font-size: 22px;
+
+            @media screen and (max-width: 1024px) {
+                font-size: 18px;
+            }
         }
 
         .error {

@@ -15,7 +15,8 @@ function start() {
     numQuestion = document.getElementById("num-questions").value;
     difficulty = document.getElementById("difficulty").value;
     category = document.getElementById("category").value;
-    if (numQuestion == 0 && difficulty == 0 && category == 0) {
+    console.log(numQuestion)
+    if (numQuestion == 0 || difficulty == 0 || category == 0) {
       console.log('false')
       const error = document.getElementById("error");
       error.innerText = 'Please complete fields';
